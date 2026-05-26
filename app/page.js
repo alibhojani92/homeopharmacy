@@ -49,6 +49,13 @@ export default function Home() {
         </div>
       </div>
 
+{/* Maintenance Notice */}
+<div className="px-5 pb-6">
+  <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 p-4 rounded-2xl text-center">
+    🚧 Website is currently under development. More medicines & features coming soon.
+  </div>
+</div>
+
       {/* Categories */}
       <div className="p-5">
         <h2 className="text-3xl font-bold mb-4">
