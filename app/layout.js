@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+metadataBase: new URL("https://homeopharmacy.aliraza-19d.workers.dev"),
   title: "Shri Sainath Homoeopathic Pharmacy",
   description: "Buy Homeopathic Medicines Online",
 
