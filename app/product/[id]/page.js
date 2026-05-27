@@ -5,8 +5,6 @@ import Image from "next/image";
 export default function ProductPage() {
   return (
     <main className="min-h-screen bg-gray-100 p-4">
-
-      {/* Product Card */}
       <div className="bg-white rounded-3xl shadow-lg p-5">
 
         {/* Product Image */}
@@ -63,15 +61,31 @@ export default function ProductPage() {
             </div>
           </div>
 
-{/* Description */}
-<div className="mt-6">
-  <h2 className="text-xl font-bold">
-    Description
-  </h2>
+          {/* Description */}
+          <div className="mt-6">
+            <h2 className="text-xl font-bold">
+              Description
+            </h2>
 
-  <p className="text-gray-600 mt-2">
-    Nux Vomica is commonly used in homeopathy
-    for acidity, digestion issues, headache,
-    stress, and gastric complaints.
-  </p>
-</div>
+            <p className="text-gray-600 mt-2">
+              Nux Vomica is commonly used in homeopathy
+              for acidity, digestion issues, headache,
+              stress, and gastric complaints.
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div className="mt-6 flex gap-3">
+            <button className="bg-teal-700 text-white flex-1 py-4 rounded-2xl font-bold">
+              Add to Cart
+            </button>
+
+            <button className="bg-green-600 text-white flex-1 py-4 rounded-2xl font-bold">
+              WhatsApp Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
