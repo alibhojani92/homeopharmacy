@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import products from "../data/products";
+import products from "../data/sbl-products";
 export default function Home() {
   const [search, setSearch] = useState("");
 
