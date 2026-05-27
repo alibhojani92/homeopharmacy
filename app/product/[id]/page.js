@@ -63,5 +63,15 @@ export default function ProductPage() {
             </div>
           </div>
 
-          {/* Description */}
-          <div className="mt-
+{/* Description */}
+<div className="mt-6">
+  <h2 className="text-xl font-bold">
+    Description
+  </h2>
+
+  <p className="text-gray-600 mt-2">
+    Nux Vomica is commonly used in homeopathy
+    for acidity, digestion issues, headache,
+    stress, and gastric complaints.
+  </p>
+</div>
