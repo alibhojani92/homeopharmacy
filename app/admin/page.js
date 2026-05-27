@@ -51,6 +51,7 @@ export default function AdminPage() {
     setLoading(false);
   };
 
+console.log("Admin loaded");
   return (
     <main className="min-h-screen bg-gray-100 p-5">
       <div className="max-w-xl mx-auto bg-white rounded-3xl shadow-lg p-5">
@@ -150,20 +151,18 @@ export default function AdminPage() {
           />
 
 <div style={{ marginTop: "20px" }}>
-  <button
-    type="button"
-    onClick={() => alert("clicked")}
-    style={{
-      width: "100%",
-      backgroundColor: "#0f766e",
-      color: "white",
-      padding: "20px",
-      borderRadius: "20px",
-      fontSize: "20px",
-      fontWeight: "bold",
-      border: "none"
-    }}
-  >
+<input
+  type="button"
+  value="CLICK TEST"
+  onClick={() => alert("WORKING")}
+  style={{
+    width: "100%",
+    padding: "20px",
+    background: "red",
+    color: "white",
+    fontSize: "20px"
+  }}
+/>
     Save Product
   </button>
 </div>
