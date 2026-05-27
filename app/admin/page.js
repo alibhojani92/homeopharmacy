@@ -1,171 +1,49 @@
 "use client";
 
-import { useState } from "react";
-
 export default function AdminPage() {
-  const [loading, setLoading] = useState(false);
-
-  const [product, setProduct] = useState({
-    name: "",
-    brand: "SBL",
-    category: "",
-    price: "",
-    mrp: "",
-    description: "",
-    image: "",
-  });
-
-  const handleSave = async () => {
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(product),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        alert("✅ Product Saved!");
-
-        setProduct({
-          name: "",
-          brand: "SBL",
-          category: "",
-          price: "",
-          mrp: "",
-          description: "",
-          image: "",
-        });
-      } else {
-        alert("❌ Failed");
-      }
-    } catch (error) {
-      alert("❌ Error");
-    }
-
-    setLoading(false);
-  };
-
-console.log("Admin loaded");
   return (
-    <main className="min-h-screen bg-gray-100 p-5">
-      <div className="max-w-xl mx-auto bg-white rounded-3xl shadow-lg p-5">
-        <h1 className="text-3xl font-bold text-center mb-5">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: "#f3f4f6",
+        padding: "20px",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "500px",
+          margin: "0 auto",
+          background: "white",
+          padding: "20px",
+          borderRadius: "20px",
+        }}
+      >
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: "32px",
+            fontWeight: "bold",
+            marginBottom: "20px",
+          }}
+        >
           Admin Panel
         </h1>
 
-        <div className="space-y-4">
-          <input
-            type="text"
-            placeholder="Product Name"
-            value={product.name}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                name: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border"
-          />
-
-          <input
-            type="text"
-            placeholder="Brand"
-            value={product.brand}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                brand: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border"
-          />
-
-          <input
-            type="text"
-            placeholder="Category"
-            value={product.category}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                category: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border"
-          />
-
-          <input
-            type="number"
-            placeholder="Price"
-            value={product.price}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                price: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border"
-          />
-
-          <input
-            type="number"
-            placeholder="MRP"
-            value={product.mrp}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                mrp: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border"
-          />
-
-          <textarea
-            placeholder="Description"
-            value={product.description}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                description: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border h-32"
-          />
-
-          <input
-            type="text"
-            placeholder="Image URL"
-            value={product.image}
-            onChange={(e) =>
-              setProduct({
-                ...product,
-                image: e.target.value,
-              })
-            }
-            className="w-full p-4 rounded-2xl border"
-          />
-
-<div style={{ marginTop: "20px" }}>
-<input
-style={{
-  width: "100%",
-  padding: "20px",
-  background: "red",
-  color: "white",
-  fontSize: "20px"
-}}
-  type="button"
-  value="CLICK TEST"
-  onClick={() => alert("WORKING")}
-style={{ zIndex: 9999, position: "relative" }}
-/>
-</div>
-        </div>
+        <button
+          onClick={() => alert("WORKING")}
+          style={{
+            width: "100%",
+            background: "red",
+            color: "white",
+            padding: "25px",
+            border: "none",
+            borderRadius: "20px",
+            fontSize: "22px",
+            fontWeight: "bold",
+          }}
+        >
+          CLICK TEST
+        </button>
       </div>
     </main>
   );
