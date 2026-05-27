@@ -163,8 +163,6 @@ console.log("Admin loaded");
     fontSize: "20px"
   }}
 />
-    Save Product
-  </button>
 </div>
         </div>
       </div>
