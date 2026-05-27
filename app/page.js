@@ -140,14 +140,11 @@ const filteredMedicines = products.filter(
         </button>
 
 <Image
-  src={medicine.image || "/logo.webp"}
+  src="/logo.webp"
   alt={medicine.name}
   width={200}
   height={200}
   className="rounded-2xl h-32 w-full object-contain bg-white p-2"
-  onError={(e) => {
-    e.currentTarget.src = "/logo.webp";
-  }}
 />
         <p className="text-sm text-gray-500 mt-3">
           {medicine.brand}
