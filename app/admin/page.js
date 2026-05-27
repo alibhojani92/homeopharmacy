@@ -1,4 +1,11 @@
 "use client";
+<button
+  type="button"
+  onClick={() => handleSave()}
+  className="bg-teal-700 text-white w-full py-4 rounded-2xl font-bold text-lg cursor-pointer active:scale-95"
+>
+  {loading ? "Saving..." : "Save Product"}
+</button>
 
 import { useState } from "react";
 
