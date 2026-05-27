@@ -1,11 +1,4 @@
 "use client";
-<button
-  type="button"
-  onClick={() => handleSave()}
-  className="bg-teal-700 text-white w-full py-4 rounded-2xl font-bold text-lg cursor-pointer active:scale-95"
->
-  {loading ? "Saving..." : "Save Product"}
-</button>
 
 import { useState } from "react";
 
@@ -25,33 +18,37 @@ export default function AdminPage() {
   const handleSave = async () => {
     setLoading(true);
 
-    const res = await fetch("/api/products", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(product),
-    });
+    try {
+      const res = await fetch("/api/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(product),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
+
+      if (data.success) {
+        alert("✅ Product Saved!");
+
+        setProduct({
+          name: "",
+          brand: "SBL",
+          category: "",
+          price: "",
+          mrp: "",
+          description: "",
+          image: "",
+        });
+      } else {
+        alert("❌ Failed");
+      }
+    } catch (error) {
+      alert("❌ Error");
+    }
 
     setLoading(false);
-
-    if (data.success) {
-      alert("✅ Product Saved!");
-
-      setProduct({
-        name: "",
-        brand: "SBL",
-        category: "",
-        price: "",
-        mrp: "",
-        description: "",
-        image: "",
-      });
-    } else {
-      alert("❌ Error saving product");
-    }
   };
 
   return (
@@ -153,6 +150,7 @@ export default function AdminPage() {
           />
 
           <button
+            type="button"
             onClick={handleSave}
             className="bg-teal-700 text-white w-full py-4 rounded-2xl font-bold text-lg"
           >
