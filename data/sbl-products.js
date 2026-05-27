@@ -141,7 +141,7 @@ export default [
     ]
   },
   {
-    "id": "stodal-",
+    "id": "stobal-",
     "name": "STODAL +",
     "potency": "",
     "brand": "SBL",
