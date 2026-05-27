@@ -1,6 +1,9 @@
 "use client";
 
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -161,8 +164,11 @@ export default function Home() {
           {filteredMedicines.map((medicine, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl shadow-md p-3 relative"
-            >
+<Link
+  href={`/product/${medicine.name.toLowerCase().replace(/\s+/g, "-")}`}
+  key={index}
+  className="bg-white rounded-3xl shadow-md p-3 relative block"
+>
               <button className="absolute top-3 right-3 text-xl">
                 🤍
               </button>
@@ -203,8 +209,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
-
+</Link>
       {/* Maintenance Notice */}
       <div className="px-5 pb-6">
         <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 p-4 rounded-2xl text-center">
