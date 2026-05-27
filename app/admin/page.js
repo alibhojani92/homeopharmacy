@@ -149,13 +149,24 @@ export default function AdminPage() {
             className="w-full p-4 rounded-2xl border"
           />
 
-          <button
-            type="button"
-            onClick={handleSave}
-            className="bg-teal-700 text-white w-full py-4 rounded-2xl font-bold text-lg"
-          >
-            {loading ? "Saving..." : "Save Product"}
-          </button>
+<div style={{ marginTop: "20px" }}>
+  <button
+    type="button"
+    onClick={() => alert("clicked")}
+    style={{
+      width: "100%",
+      backgroundColor: "#0f766e",
+      color: "white",
+      padding: "20px",
+      borderRadius: "20px",
+      fontSize: "20px",
+      fontWeight: "bold",
+      border: "none"
+    }}
+  >
+    Save Product
+  </button>
+</div>
         </div>
       </div>
     </main>
