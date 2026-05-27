@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -10,10 +8,12 @@ export default function Home() {
   const [search, setSearch] = useState("");
 
 
-  const filteredMedicines = medicines.filter((medicine) =>
-    medicine.name.toLowerCase().includes(search.toLowerCase())
-  );
-
+const filteredMedicines = products.filter(
+  (medicine) =>
+    medicine.name
+      .toLowerCase()
+      .includes(search.toLowerCase())
+);
   return (
     <main className="min-h-screen bg-gray-100">
 
