@@ -5,44 +5,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import products from "../data/products";
 export default function Home() {
   const [search, setSearch] = useState("");
 
-  const medicines = [
-    {
-      name: "Nux Vomica",
-      potency: "30",
-      brand: "SBL",
-      price: 99,
-      mrp: 130,
-      image: "/medicines/nux.webp",
-    },
-    {
-      name: "Rhus Tox",
-      potency: "200",
-      brand: "SBL",
-      price: 119,
-      mrp: 160,
-      image: "/medicines/rhus.webp",
-    },
-    {
-      name: "Arnica Montana",
-      potency: "Q",
-      brand: "SBL",
-      price: 149,
-      mrp: 190,
-      image: "/medicines/arnica.webp",
-    },
-    {
-      name: "Belladonna",
-      potency: "30",
-      brand: "SBL",
-      price: 89,
-      mrp: 120,
-      image: "/medicines/belladonna.webp",
-    },
-  ];
 
   const filteredMedicines = medicines.filter((medicine) =>
     medicine.name.toLowerCase().includes(search.toLowerCase())
