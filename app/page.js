@@ -154,62 +154,63 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured Medicines */}
-      <div className="px-5 pb-24">
-        <h2 className="text-3xl font-bold mb-4">
-          Featured Medicines
-        </h2>
+{/* Featured Medicines */}
+<div className="px-5 pb-24">
+  <h2 className="text-3xl font-bold mb-4">
+    Featured Medicines
+  </h2>
 
-        <div className="grid grid-cols-2 gap-4">
-          {filteredMedicines.map((medicine, index) => (
-            <div
-              key={index}
-<Link
-  href={`/product/${medicine.name.toLowerCase().replace(/\s+/g, "-")}`}
-  key={index}
-  className="bg-white rounded-3xl shadow-md p-3 relative block"
->
-              <button className="absolute top-3 right-3 text-xl">
-                🤍
-              </button>
+  <div className="grid grid-cols-2 gap-4">
+    {filteredMedicines.map((medicine, index) => (
+      <Link
+        href={`/product/${medicine.name
+          .toLowerCase()
+          .replace(/\s+/g, "-")}`}
+        key={index}
+        className="bg-white rounded-3xl shadow-md p-3 relative block"
+      >
+        <button className="absolute top-3 right-3 text-xl">
+          🤍
+        </button>
 
-              <Image
-                src={medicine.image}
-                alt={medicine.name}
-                width={200}
-                height={200}
-                className="rounded-2xl h-32 w-full object-contain bg-white p-2"
-              />
+        <Image
+          src={medicine.image}
+          alt={medicine.name}
+          width={200}
+          height={200}
+          className="rounded-2xl h-32 w-full object-contain bg-white p-2"
+        />
 
-              <p className="text-sm text-gray-500 mt-3">
-                {medicine.brand}
-              </p>
+        <p className="text-sm text-gray-500 mt-3">
+          {medicine.brand}
+        </p>
 
-              <h3 className="font-bold text-lg leading-tight">
-                {medicine.name} {medicine.potency}
-              </h3>
+        <h3 className="font-bold text-lg leading-tight">
+          {medicine.name} {medicine.potency}
+        </h3>
 
-              <div className="flex items-center gap-2 mt-2">
-                <span className="text-green-700 font-bold text-lg">
-                  ₹{medicine.price}
-                </span>
+        <div className="flex items-center gap-2 mt-2">
+          <span className="text-green-700 font-bold text-lg">
+            ₹{medicine.price}
+          </span>
 
-                <span className="line-through text-gray-400 text-sm">
-                  ₹{medicine.mrp}
-                </span>
-              </div>
-
-              <span className="inline-block mt-2 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">
-                25% OFF
-              </span>
-
-              <button className="bg-teal-700 text-white w-full py-3 rounded-2xl mt-3 font-semibold">
-                Add to Cart
-              </button>
-            </div>
-          ))}
+          <span className="line-through text-gray-400 text-sm">
+            ₹{medicine.mrp}
+          </span>
         </div>
-</Link>
+
+        <span className="inline-block mt-2 bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">
+          25% OFF
+        </span>
+
+        <button className="bg-teal-700 text-white w-full py-3 rounded-2xl mt-3 font-semibold">
+          Add to Cart
+        </button>
+      </Link>
+    ))}
+  </div>
+</div>
+
       {/* Maintenance Notice */}
       <div className="px-5 pb-6">
         <div className="bg-yellow-100 border border-yellow-300 text-yellow-800 p-4 rounded-2xl text-center">
