@@ -19,7 +19,7 @@ export default function AdminPage() {
     try {
       setLoading(true);
 
-      const res = await fetch("/api/products", {
+      const res = await fetch(window.location.origin + "/api/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
