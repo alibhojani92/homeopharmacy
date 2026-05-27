@@ -152,16 +152,17 @@ console.log("Admin loaded");
 
 <div style={{ marginTop: "20px" }}>
 <input
+style={{
+  width: "100%",
+  padding: "20px",
+  background: "red",
+  color: "white",
+  fontSize: "20px"
+}}
   type="button"
   value="CLICK TEST"
   onClick={() => alert("WORKING")}
-  style={{
-    width: "100%",
-    padding: "20px",
-    background: "red",
-    color: "white",
-    fontSize: "20px"
-  }}
+style={{ zIndex: 9999, position: "relative" }}
 />
 </div>
         </div>
